@@ -7,7 +7,7 @@ profile = "black"
 skip = ["env", "venv"]
 
 [tool.poetry]
-authors = ["nirtal85 <nirt236@gmail.com>"]
+authors = ["nirtal85 <nirt236@gmail.com>","amielnoy <amielnoy@gmail.com>"]
 description = "Playwright Python example project with pytest and Allure report"
 keywords = ["playwright", "automation", "testing", "web"]
 name = "playwright-python"
@@ -23,7 +23,7 @@ pytest = "8.3.4"
 pytest-base-url = "2.1.0"
 pytest-playwright = "0.7.0"
 pytest-split = "0.10.0"
-python = "^3.11"
+python = "3.13"
 requests = "2.32.3"
 
 [tool.poetry.group.dev.dependencies]
