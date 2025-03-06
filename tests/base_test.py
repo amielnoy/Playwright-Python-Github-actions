@@ -1,4 +1,4 @@
-from geventhttpclient import requests
+import requests
 
 from utilities.constants import Constants
 
