@@ -3,7 +3,7 @@ import pytest
 
 
 class TestAccessibility:
-    #suppose to fail because of 3 moderate violations
+    # suppose to fail because of 3 moderate violations
     @pytest.mark.xfail
     @allure.title("Test Accessibility with Default Counts")
     def test_accessibility_default_counts(self, axe_playwright, page):
@@ -22,6 +22,7 @@ class TestAccessibility:
                 "critical": 0,
             },
         )
+
     @pytest.mark.nondestructive
     @allure.title("Test Accessibility with Custom Counts")
     def test_accessibility_custom_counts(self, axe_playwright, page):
@@ -47,6 +48,7 @@ class TestAccessibility:
                 "critical": 0,
             },
         )
+
     @pytest.mark.nondestructive
     @allure.title("Test Accessibility with Custom Counts")
     def test_accessibility_custom_counts(self, axe_playwright, page):

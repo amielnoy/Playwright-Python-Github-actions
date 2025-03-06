@@ -2,7 +2,8 @@ import requests
 
 from utilities.constants import Constants
 
-class BaseTest():
+
+class BaseTest:
     @staticmethod
     def get_public_ip() -> str:
         """Function to retrieve public IP address.
