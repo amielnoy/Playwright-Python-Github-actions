@@ -32,16 +32,18 @@ class AxeHelper:
                 "critical": 0,
             }
         results = self.axe.run(page)
+        #for every dictionary in the list of dictionaries results.response["violations"]
+        #for every value=violation["impact"] in violation: Dictionary
+        violation_counter=Counter(
+            [violation["impact"] for violation in results.response["violations"]]
+        )
         violations_count = dict(
-            Counter(
-                [violation["impact"] for violation in results.response["violations"]]
-            )
+            violation_counter
         )
         if violations_exceeded := {
             impact_level: violation_count
             for impact_level, violation_count in violations_count.items()
-            if violation_count
-            > maximum_allowed_violations_by_impact.get(impact_level, 0)
+            if violation_count > maximum_allowed_violations_by_impact.get(impact_level, 0)
         }:
             allure.attach(
                 body=json.dumps(results.response["violations"], indent=4),

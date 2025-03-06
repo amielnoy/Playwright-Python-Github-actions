@@ -144,3 +144,5 @@ cython_debug/
 *allure-results
 *allure-report
 trace.zip
+
+.qodo
