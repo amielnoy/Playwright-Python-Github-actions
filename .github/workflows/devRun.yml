@@ -45,7 +45,7 @@ jobs:
       - name: Test with pytest
         run: |
           source .venv/bin/activate
-          xvfb-run pytest -m devRun --base-url ${{ env.BASE_URL }}
+          xvfb-run pytest  --base-url ${{ env.BASE_URL }}
 
       - name: Cache dependencies if tests pass
         if: success()
