@@ -10,6 +10,8 @@ jobs:
   merge_test:
     timeout-minutes: 15
     runs-on: ubuntu-latest
+    vars:
+      BASE_URL: "https://www.saucedemo.com/"
     steps:
       - uses: actions/checkout@v4
       - uses: psf/black@stable
@@ -17,7 +19,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.13'
+          python-version: '3.12'
       - name: Install Poetry
         uses: snok/install-poetry@v1
         with:
