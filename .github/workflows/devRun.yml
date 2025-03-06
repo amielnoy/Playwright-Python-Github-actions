@@ -16,12 +16,16 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+
       - uses: psf/black@stable
+
       - uses: isort/isort-action@v1
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+
       - name: Install Poetry
         uses: snok/install-poetry@v1
         with:
@@ -29,25 +33,31 @@ jobs:
           virtualenvs-in-project: true
           installer-parallel: true
           virtualenvs-path: .venv
+
       - name: Install Dependencies
         run: poetry install --no-interaction --no-root
+
       - name: Install Playwright Browsers
         run: |
           PLAYWRIGHT_VERSION=$(grep -E '^playwright = "[^"]*"' pyproject.toml | sed -E 's/playwright = "([^"]*)".*$/\1/')
           npx playwright@$PLAYWRIGHT_VERSION install --with-deps
+
       - name: Test with pytest
         run: |
           source .venv/bin/activate
           xvfb-run pytest -m devRun --base-url ${{ env.BASE_URL }}
+
       - name: Cache dependencies if tests pass
         if: success()
         uses: actions/cache/save@v4
         with:
           path: .venv
           key: venv-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('**/poetry.lock') }}
+
       - name: Auto-assign reviewers
         uses: kentaro-m/auto-assign-action@v2.0.0
-        if: success()
+        if: github.event_name == 'pull_request'
+
       - name: Store Playwright Traces and Videos From Failed Tests
         if: failure()
         uses: actions/upload-artifact@v4.6.1
@@ -56,10 +66,12 @@ jobs:
           name: test-results
           path: test-results/
           retention-days: 7
+
       - name: Link Playwright Traces And Videos To Allure Report
         working-directory: allure-results
         if: failure()
         run: echo ARTIFACT_URL=${{ steps.artifact-upload-step.outputs.artifact-url }} >> environment.properties
+
       - name: Link Git Information And Browser Version To Allure Report
         working-directory: allure-results
         if: always()
