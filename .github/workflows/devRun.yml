@@ -40,7 +40,7 @@ jobs:
       - name: Install Playwright Browsers
         run: |
           PLAYWRIGHT_VERSION=$(grep -E '^playwright = "[^"]*"' pyproject.toml | sed -E 's/playwright = "([^"]*)".*$/\1/')
-          npx playwright@$PLAYWRIGHT_VERSION install --with-deps
+          npx playwright@$PLAYWRIGHT_VERSION install --with-deps --browser=chromium
 
       - name: Test with pytest
         run: |
