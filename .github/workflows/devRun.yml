@@ -10,8 +10,10 @@ jobs:
   merge_test:
     timeout-minutes: 15
     runs-on: ubuntu-latest
-    vars:
+
+    env:
       BASE_URL: "https://www.saucedemo.com/"
+
     steps:
       - uses: actions/checkout@v4
       - uses: psf/black@stable
