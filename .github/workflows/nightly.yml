@@ -63,6 +63,9 @@ jobs:
         run: |
           PLAYWRIGHT_VERSION=$(grep -E '^playwright = "[^"]*"' pyproject.toml | sed -E 's/playwright = "([^"]*)".*$/\1/')
           npx playwright@$PLAYWRIGHT_VERSION install --with-deps
+      
+      - name: Verify environment variable
+        run: echo ${{ env.BASE_URL }}     
           
       - name: Run Tests
         run: |
