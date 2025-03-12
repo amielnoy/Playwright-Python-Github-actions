@@ -19,8 +19,6 @@ on:
 jobs:
   setup-matrix:
     runs-on: ubuntu-latest
-    env:
-      BASE_URL: "https://www.saucedemo.com/"
       
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
@@ -34,6 +32,9 @@ jobs:
   nightly-test:
     needs: setup-matrix
     runs-on: ubuntu-latest
+    env:
+      BASE_URL: "https://www.saucedemo.com/"
+      
     strategy:
       fail-fast: false
       matrix: ${{ fromJson(needs.setup-matrix.outputs.matrix) }}
