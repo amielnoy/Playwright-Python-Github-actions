@@ -1,8 +1,0 @@
-"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","137","Login with invalid credentials test","tests","Tue Apr 14 00:23:49 UTC 2026","passed","Tue Apr 14 00:23:50 UTC 2026","TestLogin","login_test","",""
-"","174","Login with invalid credentials test","tests","Tue Apr 14 00:23:49 UTC 2026","passed","Tue Apr 14 00:23:49 UTC 2026","TestLogin","login_test","",""
-"","185","Test Accessibility with Custom Counts","tests","Tue Apr 14 00:23:58 UTC 2026","skipped","Tue Apr 14 00:23:58 UTC 2026","TestAccessibility","accesability_test","",""
-"","184","Test Accessibility with Custom Counts","tests","Tue Apr 14 00:23:59 UTC 2026","passed","Tue Apr 14 00:23:59 UTC 2026","TestAccessibility","accesability_test","",""
-"","300","test_checkout_counter[chromium-standard_user]","tests","Tue Apr 14 00:24:00 UTC 2026","failed","Tue Apr 14 00:24:00 UTC 2026","TestCheckout","checkout_test","",""
-"","220","Test Accessibility with Default Counts","tests","Tue Apr 14 00:23:57 UTC 2026","skipped","Tue Apr 14 00:23:57 UTC 2026","TestAccessibility","accesability_test","",""
-"","40","test_inventory_page[chromium-standard_user]","tests","Tue Apr 14 00:23:48 UTC 2026","passed","Tue Apr 14 00:23:48 UTC 2026","TestInventory","inventory_test","",""
