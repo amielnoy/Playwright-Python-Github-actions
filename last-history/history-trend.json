@@ -1,1 +1,1 @@
-[{"data":{"failed":0,"broken":0,"skipped":0,"passed":0,"unknown":0,"total":0}}]
+[{"buildOrder":768,"reportUrl":"https://amielnoy.github.io/Playwright-Python-Github-actions/768","reportName":"Allure Report with history","data":{"failed":1,"broken":0,"skipped":2,"passed":4,"unknown":0,"total":7}}]
